@@ -3,10 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="keywords" content="remove background, image background remover, free tool, background eraser, transparent image, background removal, bulk image background remover, online background remover">
-    <meta name="description" content="Free online tool to remove background from images instantly. Upload your photos and get clean, transparent backgrounds in seconds. No login required.">
-    <link rel="canonical" href="https://yourdomain.com/">
-
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <!-- Google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,19 +10,35 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='15' fill='%23f97316'/><path d='M30 30L70 30L70 70L30 70Z' fill='none' stroke='white' stroke-width='8'/><path d='M40 40L60 40L60 60L40 60Z' fill='none' stroke='white' stroke-width='4'/></svg>">
-    <link rel="stylesheet" href="./static/css/main.css">
-    <title>Remove Background from Images Instantly - Free Online Tool</title>
+
+    <link rel="stylesheet" href="./static/css/main.min.css">
+    <title>AI Background Remover | Remove Image Background Online</title>
+    <meta name="description" content="Free online tool to remove image backgrounds using AI. Fast, accurate, and easy to use. Upload, process, and download your images.">
+    <meta name="keywords" content="remove background, image background remover, free background remover, AI background remover, transparent background">
+
+    <meta property="og:title" content="AI Background Remover">
+    <meta property="og:description" content="Remove image backgrounds with AI. Just upload, process, and download.">
+    <meta property="og:image" content="/static/images/og-preview.png">
+    <meta property="og:type" content="website">
+
+    <meta property="og:url" content="https://yourdomain.com/">
+    <link rel="canonical" href="https://yourdomain.com/" />
 
     <script type="application/ld+json">
         {
-            "@context": "https://schema.org",
-            "@type": "WebSite",
-            "name": "Remove Background Tool",
-            "url": "https://yourdomain.com/",
-            "description": "Upload your photos and remove backgrounds instantly with our free online tool.",
-            "inLanguage": "en"
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "AI Background Remover",
+        "url": "https://yourdomain.com",
+        "applicationCategory": "ImageEditingApplication",
+        "operatingSystem": "All",
+        "offers": {
+            "@type": "Offer",
+            "price": "0.00",
+            "priceCurrency": "USD"
+            }
         }
-    </script>
+</script>
 </head>
 <body class="body">
 
@@ -72,23 +84,23 @@
                 </div>
                 <div class="font-bold">Upload images</div>
                 <div class="text-gray-400 text-sm">Drag & drop your images here or click to browse</div>
-                <button class="bg-orange-400 px-4 py-3 text-white font-bold rounded-full hover:shadow-xl">Select Images</button>
+                <input type="file" id="fileInput" accept="image/*" multiple class="hidden">
+                <button onclick="document.getElementById('fileInput').click()" class="bg-orange-400 px-4 py-3 text-white font-bold rounded-full hover:shadow-xl">Select Images</button>
         </div>
     </section>
     <!-- upload section ends -->
 
     <!-- Uploaded Images section starts -->
-    <section class="container uploaded-images-container">
+  <section class="container uploaded-images-container">
         <div class="labels flex items-center justify-between mt-14">
             <p class="font-bold text-black">Your Images</p>
             <div>
-                <button class="font-bold border border-gray-300 px-4 py-2 cursor-pointer rounded-lg hover:bg-gray-200">Clear all</button>
+                <button onclick="clearAllImages()" class="font-bold border border-gray-300 px-4 py-2 cursor-pointer rounded-lg hover:bg-gray-200">Clear all</button>
             </div>
         </div>
-        <div class="images grid grid-cols-1 grid-rows-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-5 rounded-lg mt-5">
-            
+        <div id="imageGrid" class="images grid grid-cols-1 grid-rows-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-5 rounded-lg mt-5">
+            <!-- Images will be added here dynamically -->
         </div>
-        
     </section>
     <!-- Uploaded images sections ends -->
     <div class="border border-gray-300 mt-14"></div>
@@ -111,7 +123,7 @@
         </div>
     </div>
     <!-- scripts -->
-    <script src="./static/js/dark_light.js"></script>
-    <script src="./static/js/imageUpload.js"></script>
+    <script src="./static/js/darkLight.min.js"></script>
+    <script src="./static/js/ImageUpload.min.js"></script>
 </body>
 </html>
